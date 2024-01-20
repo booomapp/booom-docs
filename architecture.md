@@ -38,3 +38,7 @@ It is used only for reading data by Booom client (like browser app or mobile app
 7. When `client` do any transaction by `blockchain` it get the transaction hash. `Index` server provite the way to check if transaction was processed or not. So `client` can implement some `loader` waiting for the transaction process finishing by `index`.
 8. After processing the `Register` event `Index` server creates the record about the user that was already stored in `blockchain`. The record will contain `code` and `address`.
 9. For using `index` API the `client` should be authenticated by `index`. The way is: the first step is getting the temporary random message from the `index` linked to `address`, the second step is the signing this message by private key on the client and the last step is the verifying by `index` that message was signed by the private key linked to the `address`. After all `index` server gives to client the JWT token that can be stored to `cookies` or local storage.
+
+### Gas
+
+The public blockchains usually use the kind of `gas` to make the transactions. So if `blockchain` is kind of the public blockchain, `Client` should implement the interface to show to user the way for loading the native token of the blockchain to pay for the `gas`.
